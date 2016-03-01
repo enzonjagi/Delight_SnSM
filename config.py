@@ -14,6 +14,7 @@ class Config:
     DELIGHT_MAIL_SUBJECT_PREFIX = '[Delight]'
     DELIGHT_MAIL_SENDER = 'Delight Admin amosndungo@gmail.com'
     DELIGHT_ADMIN = os.environ.get('DELIGHT_ADMIN')
+    
 
     @staticmethod
     def init_app(app):
