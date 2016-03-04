@@ -12,10 +12,10 @@ from .forms import LoginForm, RegistrationForm, ChangePasswordForm, \
 def before_request():
     if current_user.is_authenticated :
         current_user.ping()
-        if not current_user.confirmed \
-            and request.endpoint[:5] != 'auth.' \
-            and request.endpoint != 'static':
-            return redirect(url_for('auth.unconfirmed'))
+        # if not current_user.confirmed \
+        #     and request.endpoint[:5] != 'auth.' \
+        #     and request.endpoint != 'static':
+        #     return redirect(url_for('auth.unconfirmed'))
 
 @auth.route('/unconfirmed')
 def unconfirmed():
@@ -54,7 +54,7 @@ def register():
         token = user.generate_confirmation_token()
         send_email(user.email, 'Confirm Your account',
                    'auth/email/confirm', user=user, token=token)
-        flash('A confirmation email has been sent to you by email.')
+        flash('Thank you for registering with us.')
         return redirect(url_for('main.index'))
     return render_template('auth/register.html', form=form)
  
