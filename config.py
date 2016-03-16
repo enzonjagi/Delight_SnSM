@@ -15,8 +15,9 @@ class Config:
     DELIGHT_MAIL_SENDER = 'Delight Admin amosndungo@gmail.com'
     DELIGHT_ADMIN = os.environ.get('DELIGHT_ADMIN')
     DELIGHT_POSTS_PER_PAGE = 20
-    DELIGHT_FOLLOWERS_PER_PAGE = 20
-    DEBUG = True
+    DELIGHT_FOLLOWERS_PER_PAGE = 50
+    DELIGHT_COMMENTS_PER_PAGE = 20
+    
     
     @staticmethod
     def init_app(app):

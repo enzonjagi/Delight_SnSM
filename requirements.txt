@@ -4,6 +4,8 @@ bleach==1.4
 blinker==1.3
 coverage==4.0.3
 decorator==4.0.9
+dj-database-url==0.4.0
+Django==1.9.2
 dominate==2.1.17
 Flask==0.10.1
 Flask-Babel==0.9
@@ -33,6 +35,7 @@ psycopg2==2.6.1
 python-editor==0.5
 python-openid==2.2.5
 pytz==2015.7
+requests==2.9.1
 six==1.4.1
 speaklater==1.3
 SQLAlchemy==0.9.9
@@ -43,5 +46,6 @@ virtualenv==14.0.6
 virtualenvwrapper-win==1.2.1
 visitor==0.1.2
 Werkzeug==0.10.4
+whitenoise==2.0.6
 Whoosh==2.7.2
 WTForms==1.0.5
