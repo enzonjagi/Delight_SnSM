@@ -16,14 +16,16 @@
             {%endif%}
             </div>
             <div class="post-footer">
-                <div class="pull-right"><a href="{{url_for('.post', id=post.id)}}">
-                    <span class="label label-default">Permalink</span>
-                </a></div>
                 {%if current_user == post.author%}
                 <div class="pull-right"><a href="{{url_for('.edit', id=post.id)}}">
                     <span class="label label-primary">Edit</span></div>
                 </a>
                 {%endif%}
+                <a href="{{url_for('.post', id=post.id)}}#comments">
+                    <span class="label label-primary">
+                        {{post.commemts.count()}} Comments
+                    </span>
+                </a>
             </div>
         </div>
         

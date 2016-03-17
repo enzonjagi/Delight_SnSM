@@ -1,5 +1,5 @@
 from flask.ext.wtf import Form
-from flask.ext.pagedown.fields import PageDownField
+from flask_pagedown.fields import PageDownField
 from wtforms import StringField, TextAreaField, BooleanField, SelectField,\
     SubmitField
 from wtforms.validators import Required, Length, Email, Regexp
@@ -48,4 +48,8 @@ class EditProfileAdminForm(Form):
 
 class PostForm(Form):
     body = PageDownField("Be free and let it all out in poetry so, what's on you mind?", validators=[Required()])
+    submit = SubmitField('Submit')
+
+class CommentForm(Form):
+    body = StringField('What are your views on this piece?', validators=Required())
     submit = SubmitField('Submit')

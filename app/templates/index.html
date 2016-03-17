@@ -12,28 +12,29 @@
     {{ wtf.quick_form(form) }}
     {% endif %}
 </div>
-{%if current_user.is_authenticated%}
-    {% include '_posts.html' %}
-    {% if pagination %}
-    <div class="pagination">
-	    {{macros.pagination_widget(pagination, '.index')}}
-    </div>
-    {% endif %}
-{%else%}
-    <div>
-        <div class="pull-left"><img class="img-responsive" src="http://www.peabodylibrary.org/freeforall/wp-content/uploads/2016/01/poetry-quotes-620x3501.jpg"/></div>
-
-
-    	<p style="font-size:20px;text-align:center;">Delight is a poetry forum where users display their poetry for others to see and compliment on.   
+<div class="post-tabs">
+    <ul class="nav nav-tabs">
+        <li {%if not show_followed%} class="active"{%endif%}><a href="{{url_for('.show_all')}}">All</a></li>
+        {%if current_user.is_authenticated%}
+        <li {%if show_followed%} class="active"{%endif%}><a href="{{url_for('.show_followed')}}">Followers</a>
+        {%else%}
+        <div>
+            <div class="pull-left"><img class="img-responsive" src="http://www.peabodylibrary.org/freeforall/wp-content/uploads/2016/01/poetry-quotes-620x3501.jpg"/></div>
+            <p style="font-size:20px;text-align:center;">Delight is a poetry forum where users display their poetry for others to see and comment on.   
             Be free to try poetry and trust me, its a wonderful experience for you and for all who see your post. 
             <strong>Please login to continue.</strong>
-        </p>
+            </p>
+        </div>
+        {%endif%}
+    </ul>
+    {% include '_posts.html' %}
+</div>
+{% if pagination %}
+<div class="pagination">
+{{macros.pagination_widget(pagination, '.index')}}
+</div>
+{% endif %}
 
-
-        
-
-    </div>
-{%endif%}
 {% endblock %}
 {% block scripts %}
 {{super()}}
