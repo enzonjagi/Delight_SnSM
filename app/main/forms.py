@@ -51,5 +51,5 @@ class PostForm(Form):
     submit = SubmitField('Submit')
 
 class CommentForm(Form):
-    body = StringField('What are your views on this piece?', validators=Required())
+    body = StringField('What are your views on this piece?', validators=[Required()])
     submit = SubmitField('Submit')
