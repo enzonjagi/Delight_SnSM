@@ -45,7 +45,7 @@ Tempita==0.5.2
 virtualenv==14.0.6
 virtualenvwrapper-win==1.2.1
 visitor==0.1.2
-Werkzeug==0.10.4
+Werkzeug==0.15.3
 whitenoise==2.0.6
 Whoosh==2.7.2
 WTForms==1.0.5
