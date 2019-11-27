@@ -7,7 +7,7 @@ decorator==4.0.9
 dj-database-url==0.4.0
 Django==1.9.2
 dominate==2.1.17
-Flask==0.10.1
+Flask==1.0
 Flask-Babel==0.9
 Flask-Bootstrap==3.0.3.1
 Flask-Login==0.3.1
